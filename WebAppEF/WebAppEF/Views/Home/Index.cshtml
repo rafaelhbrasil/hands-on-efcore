@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebAppEF.Repositorio.Usuario>
+
+@{
+    ViewData["Title"] = "Cadastro de usuários";
+}
+
+<form action="@Url.Action("Create", "Home")" method="post">
+    Nome: <input name="nome" /> <br />
+    Email: <input name="email" /> <br />
+    <input type="submit" />
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Email</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nome</td>
+                <td>@item.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
